@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import iconCart from "../assets/images/basket.jpg";
+import iconCart from "../assets/images/iconCart.png";
 
 const Header = () => {
   return (

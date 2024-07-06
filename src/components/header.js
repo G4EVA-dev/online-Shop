@@ -20,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between items-center mb-5">
+    <header className="flex justify-between items-center mb-5 ">
       <Link
         to="/"
         className="bg-sky-500 text-white text-3xl md:text-4xl lg:text-5xl p-4 rounded transition duration-300 ease-in-out hover:bg-sky-700 hover:shadow-lg">

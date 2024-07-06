@@ -39,7 +39,7 @@ const cartSlice = createSlice({
       localStorage.setItem("carts", JSON.stringify(state.items));
     },
     toggleStatusTab(state) {
-      if (state.status === false) {
+      if (state.statusTab === false) {
         state.statusTab = true;
       } else {
         state.statusTab = false;

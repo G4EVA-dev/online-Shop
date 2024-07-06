@@ -68,7 +68,7 @@ const CartTab = () => {
           <CartItem key={key} data={item} />
         ))}
       </div>
-      <div className="grid grid-cols-2 gap-4 p-5">
+      <div className="grid grid-cols-2 gap-4 p-2">
         <button className="bg-black text-white py-2 px-4 rounded" onClick={handleCloseTabCart}>
           CLOSE
         </button>

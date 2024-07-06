@@ -21,11 +21,14 @@ const Header = () => {
 
   return (
     <header className="flex justify-between items-center mb-5">
-      <Link to="/" className="text-xl font-semibold">
+      <Link
+        to="/"
+        className="bg-sky-500 text-white text-3xl md:text-4xl lg:text-5xl p-4 rounded transition duration-300 ease-in-out hover:bg-sky-700 hover:shadow-lg">
+      
         Home.
       </Link>
       <div
-        className="w-10 h-10 bg-gray-100 rounded-full flex justify-center items-center relative "
+        className="w-10 h-10 bg-gray-100 rounded-full flex justify-center items-center relative cursor-pointer"
         onClick={handleOpenTabCart}
       >
         <img src={iconCart} alt="Icon Cart" className="w-6" />

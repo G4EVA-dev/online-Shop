@@ -98,5 +98,98 @@ export const products = [
     image: imageProduct10,
     description: 'lorem ipsum dolor sit amet, consectetur adip',
     slug: 'product_10'
-  }
+  },
+
+
+  {
+    id: 11,
+    name: 'Product 11',
+    price: 101,
+    image: imageProduct1,
+    description: 'lorem ipsum dolor sit amet, consectetur adip',
+    slug: 'product_11'
+  },
+
+  {
+    id: 12,
+    name: 'Product 12',
+    price: 101,
+    image: imageProduct2,
+    description: 'lorem ipsum dolor sit amet, consectetur adip',
+    slug: 'product_12'
+  },
+
+  {
+    id: 13,
+    name: 'Product 13',
+    price: 101,
+    image: imageProduct3,
+    description: 'lorem ipsum dolor sit amet, consectetur adip',
+    slug: 'product_13'
+  },
+
+  {
+    id: 14,
+    name: 'Product 14',
+    price: 101,
+    image: imageProduct4,
+    description: 'lorem ipsum dolor sit amet, consectetur adip',
+    slug: 'product_14'
+  },
+
+  {
+    id: 15,
+    name: 'Product 15',
+    price: 101,
+    image: imageProduct5,
+    description: 'lorem ipsum dolor sit amet, consectetur adip',
+    slug: 'product_15'
+  },
+
+  {
+    id: 16,
+    name: 'Product 16',
+    price: 101,
+    image: imageProduct6,
+    description: 'lorem ipsum dolor sit amet, consectetur adip',
+    slug: 'product_16'
+  },
+
+  {
+    id: 17,
+    name: 'Product 17',
+    price: 101,
+    image: imageProduct7,
+    description: 'lorem ipsum dolor sit amet, consectetur adip',
+    slug: 'product_17'
+  },
+
+  {
+    id: 18,
+    name: 'Product 18',
+    price: 101,
+    image: imageProduct8,
+    description: 'lorem ipsum dolor sit amet, consectetur adip',
+    slug: 'product_18'
+  },
+
+  {
+    id: 19,
+    name: 'Product 19',
+    price: 101,
+    image: imageProduct9,
+    description: 'lorem ipsum dolor sit amet, consectetur adip',
+    slug: 'product_19'
+  },
+
+  {
+    id: 20,
+    name: 'Product 20',
+    price: 101,
+    image: imageProduct10,
+    description: 'lorem ipsum dolor sit amet, consectetur adip',
+    slug: 'product_20'
+  },
+
+  
 ]

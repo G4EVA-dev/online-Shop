@@ -74,7 +74,7 @@ const Header = () => {
       </Link>
 
       <div className="flex-grow flex justify-center mx-5 ">
-        <div className="flex items-center bg-[#EDEDEDAB] rounded-md p-2 w-full max-w-[675px] p-3">
+        <div className="flex items-center bg-[#EDEDEDAB] rounded-md p-2 w-full max-w-[675px] p-5">
           <img src={searchIcon} alt="Search Icon" className="w-6 h-6 mr-2" />
           <input
             type="text"

@@ -19,12 +19,12 @@ const ProductCard = (props) => {
   }
 
   return (
-    <div className="bg-white p-5 rounded-xl shadow-sm ">
+    <div className="bg-gray-300 bg-opacity-70 p-5 rounded-xl shadow-sm mt-[50px] ">
       <Link to={slug}>
         <img
           src={image}
           alt=""
-          className="w-full h-80 object-cover object-top drop-shadow-[0_80px_30px_#0007] transform transition-transform duration-500 hover:scale-105"
+          className="w-[140px] h-[187px]  object-top object-cover transform transition-transform duration-500 hover:scale-105 mx-auto"
         />
       </Link>
       <h3 className="text-2xl py-3 text-center font-medium">{name}</h3>

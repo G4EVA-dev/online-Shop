@@ -3,9 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleStatusTab } from "../stores/cart";
-import iconCart from "../assets/images/iconCart.png";
-import iconUser from "../assets/images/iconUser.png"; // Replace with actual path
-import iconWishlist from "../assets/images/iconWishlist.png"; // Replace with actual path
+
 import logo from "../assets/images/logo.png"; // Replace with actual path
 import searchIcon from "../assets/images/searchIcon.png"; // Replace with actual path
 
@@ -32,22 +30,30 @@ const Header = () => {
 
       
 
-      <div className="flex items-center space-x-4">
-        <div className="w-10 h-10 bg-gray-100 rounded-full flex justify-center items-center cursor-pointer">
-          <img src={iconUser} alt="User Icon" className="w-6" />
+      <div className="flex items-center space-x-4 text-[13.5px] ">
+        <div className=" flex justify-center items-center cursor-pointer">
+          <Link to='/' className="font-bold text-customPink " >
+            Product Listing
+          </Link>
         </div>
-        <div className="w-10 h-10 bg-gray-100 rounded-full flex justify-center items-center cursor-pointer">
-          <img src={iconWishlist} alt="Settings Icon" className="w-6" />
-        </div>
+
         <div
-          className="w-10 h-10 bg-gray-100 rounded-full flex justify-center items-center relative cursor-pointer"
+          className="flex justify-center items-center relative cursor-pointer"
           onClick={handleOpenTabCart}
         >
-          <img src={iconCart} alt="Cart Icon" className="w-6" />
-          <span className="absolute top-2/3 right-1/2 bg-red-500 text-white text-sm w-5 h-5 rounded-full flex justify-center items-center">
-            {totalQuantity}
-          </span>
+          <Link to='/my-cart'  className="font-bold">
+            My Cart
+          </Link>
         </div>
+
+        <div className="flex justify-center items-center cursor-pointer">
+        <Link to='/checkout' className="font-bold">
+            Checkout
+          </Link>
+        </div>
+
+        
+
       </div>
     </header>
   );

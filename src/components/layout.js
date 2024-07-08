@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./header";
 import CartTab from "./cartTab";
 import { useSelector } from "react-redux";
+import MyCart from '../pages/myCart'
 
 const Layout = () => {
   const statusTabCart = useSelector((store) => store.cart.statusTab);
@@ -18,6 +19,8 @@ const Layout = () => {
         <Outlet />
       </main>
       <CartTab />
+      
+
     </div>
   );
 };

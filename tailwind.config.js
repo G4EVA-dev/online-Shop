@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customPink:'rgba(255, 127, 125, 1)',
+        colorAddToCard: 'rgba(255, 127, 125, 1)',
+      }
+    },
   },
   plugins: [],
 }

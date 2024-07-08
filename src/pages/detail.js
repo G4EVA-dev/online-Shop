@@ -1,8 +1,9 @@
+
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { products } from "./products";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../stores/cart";
+import { menFashion, womenFashion, techGadget } from "../pages/products"; 
 
 const Detail = () => {
   const { slug } = useParams();
@@ -11,13 +12,34 @@ const Detail = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const findDetail = products.filter((product) => product.slug === slug);
-    if (findDetail.length > 0) {
-      setDetail(findDetail[0]);
+    // Function to find product detail based on slug
+    const findDetail = findProductBySlug(slug);
+    if (findDetail) {
+      setDetail(findDetail);
     } else {
-      window.location.href = "/";
+      // Handle if product not found, you can redirect or handle differently
+      window.location.href = "/"; // Redirect to home page if product not found
     }
   }, [slug]);
+
+  // Function to find product by slug in the correct category
+  const findProductBySlug = (slug) => {
+    let product;
+
+    // Check in deals of the day
+    product = techGadget.find((item) => item.slug === slug);
+    if (product) return product;
+
+    // Check in men's fashion
+    product = menFashion.find((item) => item.slug === slug);
+    if (product) return product;
+
+    // Check in women's fashion
+    product = womenFashion.find((item) => item.slug === slug);
+    if (product) return product;
+
+    return null; // Handle if product is not found
+  };
 
   const handleMinusQuantity = () => {
     setQuantity(quantity - 1 < 1 ? 1 : quantity - 1);
@@ -79,3 +101,4 @@ const Detail = () => {
 };
 
 export default Detail;
+

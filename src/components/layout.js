@@ -8,7 +8,7 @@ const Layout = () => {
   const statusTabCart = useSelector((store) => store.cart.statusTab);
 
   return (
-    <div className="bg-zinc-200">
+    <div className="bg-FAFAFA">
       <main
         className={`w-[1400px] max-w-full m-auto p-5 transform transition-transform duration-500 ${
           statusTabCart === false ? "" : "-translate-x-56"

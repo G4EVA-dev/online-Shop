@@ -1,195 +1,211 @@
-import imageProduct1 from '../assets/images/product-1.png';
-import imageProduct2 from '../assets/images/product-2.png';
-import imageProduct3 from '../assets/images/product-3.png';
-import imageProduct4 from '../assets/images/product-4.png';
-import imageProduct5 from '../assets/images/product-5.jpg';
-import imageProduct6 from '../assets/images/product-6.jpg';
-import imageProduct7 from '../assets/images/product-7.jpg';
-import imageProduct8 from '../assets/images/product-8.jpg';
-import imageProduct9 from '../assets/images/product-9.jpg';
-import imageProduct10 from '../assets/images/product-10.jpg';
+import imageProduct9 from "../assets/images/product-9.png";
+import imageProduct10 from "../assets/images/product-10.png";
+import imageProduct11 from "../assets/images/product-11.png";
+import imageProduct12 from "../assets/images/product-12.png";
+import imageProduct13 from "../assets/images/product-13.png";
+import imageProduct14 from "../assets/images/product-14.png";
+import imageProduct15 from "../assets/images/product-15.png";
+import imageProduct16 from "../assets/images/product-16.png";
+import imageProduct17 from "../assets/images/product-17.png";
+import imageProduct18 from "../assets/images/product-18.png";
+import imageProduct19 from "../assets/images/product-19.png";
+import imageProduct20 from "../assets/images/product-20.png";
+import imageProduct21 from "../assets/images/product-21.png";
+import imageProduct22 from "../assets/images/product-22.png";
+import imageProduct23 from "../assets/images/product-23.png";
+import imageProduct24 from "../assets/images/product-24.png";
+import imageProduct25 from "../assets/images/product-25.png";
+import imageProduct26 from "../assets/images/product-26.png";
+import fiveStars from "../assets/images/fiveStars.png";
+import fourStars from "../assets/images/fourStars.png";
 
-export const products = [
+export const techGadget = [
   {
     id: 1,
-    name: 'Product 1',
-    price: 101,
-    image: imageProduct1,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_1'
+    name: "Deal Product 1",
+    price: 301,
+    image: imageProduct9,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fiveStars,
+    slug: "tech_gadget_1",
   },
-
   {
     id: 2,
-    name: 'Product 2',
-    price: 101,
-    image: imageProduct2,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_2'
+    name: "Deal Product 2",
+    price: 302,
+    image: imageProduct10,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fiveStars,
+    slug: "tech_gadget_2",
   },
-
   {
     id: 3,
-    name: 'Product 3',
-    price: 101,
-    image: imageProduct3,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_3'
+    name: "Deal Product 1",
+    price: 301,
+    image: imageProduct11,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fiveStars,
+    slug: "tech_gadget_3",
   },
-
   {
     id: 4,
-    name: 'Product 4',
-    price: 101,
-    image: imageProduct4,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_4'
+    name: "Deal Product 2",
+    price: 302,
+    image: imageProduct12,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fiveStars,
+    slug: "tech_gadget_4",
   },
-
   {
     id: 5,
-    name: 'Product 5',
-    price: 101,
-    image: imageProduct5,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_5'
+    name: "Deal Product 1",
+    price: 301,
+    image: imageProduct13,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fiveStars,
+    slug: "tech_gadget_5",
   },
-
   {
     id: 6,
-    name: 'Product 6',
-    price: 101,
-    image: imageProduct6,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_6'
+    name: "Deal Product 2",
+    price: 302,
+    image: imageProduct14,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fourStars,
+    slug: "tech_gadget_6",
   },
+];
 
+export const menFashion = [
   {
     id: 7,
-    name: 'Product 7',
+    name: "Men Product 1",
     price: 101,
-    image: imageProduct7,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_7'
+    image: imageProduct15,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fourStars,
+    slug: "men_product_1",
   },
-
   {
     id: 8,
-    name: 'Product 8',
-    price: 101,
-    image: imageProduct8,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_8'
+    name: "Men Product 2",
+    price: 102,
+    image: imageProduct16,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fiveStars,
+    slug: "men_product_2",
   },
-
   {
     id: 9,
-    name: 'Product 9',
+    name: "Men Product 1",
     price: 101,
-    image: imageProduct9,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_9'
-  },
-
+    image: imageProduct17,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fourStars,
+    slug: "men_product_3",
+      },
   {
     id: 10,
-    name: 'Product 10',
-    price: 101,
-    image: imageProduct10,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_10'
+    name: "Men Product 2",
+    price: 102,
+    image: imageProduct18,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fiveStars,
+    slug: "men_product_4",
   },
-
-
   {
     id: 11,
-    name: 'Product 11',
+    name: "Men Product 1",
     price: 101,
-    image: imageProduct1,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_11'
+    image: imageProduct19,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fiveStars,
+    slug: "men_product_5",
   },
-
   {
     id: 12,
-    name: 'Product 12',
-    price: 101,
-    image: imageProduct2,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_12'
+    name: "Men Product 2",
+    price: 102,
+    image: imageProduct20,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fourStars,
+    slug: "men_product_6",
   },
+  // ... other men fashion products
+];
 
+export const womenFashion = [
   {
     id: 13,
-    name: 'Product 13',
-    price: 101,
-    image: imageProduct3,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_13'
+    name: "Women Product 1",
+    price: 201,
+    image: imageProduct21,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fourStars,
+    slug: "women_product_1",
   },
-
   {
     id: 14,
-    name: 'Product 14',
-    price: 101,
-    image: imageProduct4,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_14'
+    name: "Women Product 2",
+    price: 202,
+    image: imageProduct22,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fiveStars,
+    slug: "women_product_2",
   },
-
   {
     id: 15,
-    name: 'Product 15',
-    price: 101,
-    image: imageProduct5,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_15'
+    name: "Women Product 1",
+    price: 201,
+    image: imageProduct23,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fourStars,
+    slug: "women_product_3",
   },
-
   {
     id: 16,
-    name: 'Product 16',
-    price: 101,
-    image: imageProduct6,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_16'
+    name: "Women Product 2",
+    price: 202,
+    image: imageProduct24,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fourStars,
+    slug: "women_product_4",
   },
-
   {
     id: 17,
-    name: 'Product 17',
-    price: 101,
-    image: imageProduct7,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_17'
+    name: "Women Product 1",
+    price: 201,
+    image: imageProduct25,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fourStars,
+    slug: "women_product_5",
   },
-
   {
     id: 18,
-    name: 'Product 18',
-    price: 101,
-    image: imageProduct8,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_18'
+    name: "Women Product 2",
+    price: 202,
+    image: imageProduct26,
+    description: "lorem ipsum dolor sit amet, consectetur adip",
+    info: "BUDS ACE Wireless Earphone",
+    stars: fiveStars,
+    slug: "women_product_6",
   },
-
-  {
-    id: 19,
-    name: 'Product 19',
-    price: 101,
-    image: imageProduct9,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_19'
-  },
-
-  {
-    id: 20,
-    name: 'Product 20',
-    price: 101,
-    image: imageProduct10,
-    description: 'lorem ipsum dolor sit amet, consectetur adip',
-    slug: 'product_20'
-  },
-
-  
-]
+  // ... other women fashion products
+];

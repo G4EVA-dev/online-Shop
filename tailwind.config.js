@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         customPink:'rgba(255, 127, 125, 1)',
         colorAddToCard: 'rgba(255, 127, 125, 1)',
+        footerBackground: 'rgba(42, 42, 42, 1)',
       }
     },
   },

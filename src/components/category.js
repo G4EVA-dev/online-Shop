@@ -8,7 +8,7 @@ const Category = ({ title, products }) => {
     <div className="category ">
       <div>
         {/* <image src={borderLeft} alt={title} /> */}
-        <h1 className="text-4xl font-bold mb-5 ">{title}</h1>
+        <h1 className="text-4xl font-bold mb-5 border border-left border-customPink ">{title}</h1>
       </div>
 
       <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5">

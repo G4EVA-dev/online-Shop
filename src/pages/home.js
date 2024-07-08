@@ -2,6 +2,7 @@ import React from "react";
 import { menFashion, womenFashion, techGadget } from "../pages/products";
 import ImagesWithContent from "../components/ImagesWithContent";
 import ProductCard from "../components/productCard";
+import Footer from "../components/footer";
 
 
 const CategorySection = ({ title, products }) => (
@@ -22,6 +23,7 @@ const Home = () => {
       <CategorySection title="Tech Gadget" products={techGadget} />
       <CategorySection title="Men Fashion" products={menFashion} />
       <CategorySection title="Women Fashion" products={womenFashion} />
+      <Footer />
     </div>
   );
 };

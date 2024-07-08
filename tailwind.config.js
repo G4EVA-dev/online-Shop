@@ -9,6 +9,7 @@ module.exports = {
         customPink:'rgba(255, 127, 125, 1)',
         colorAddToCard: 'rgba(255, 127, 125, 1)',
         footerBackground: 'rgba(42, 42, 42, 1)',
+        shopItem: 'rgba(237, 237, 237, 0.67)',
       }
     },
   },

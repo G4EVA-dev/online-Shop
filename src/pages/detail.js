@@ -1,9 +1,8 @@
-
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../stores/cart";
-import { menFashion, womenFashion, techGadget } from "../pages/products"; 
+import { menFashion, womenFashion, techGadget } from "../pages/products";
 
 const Detail = () => {
   const { slug } = useParams();
@@ -60,13 +59,17 @@ const Detail = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-3xl text-center mt-5">PRODUCT DETAIL</h2>
+      <h2 className="text-3xl text-center md:mt-[65px] mt-[45px]">
+        PRODUCT DETAIL
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <img src={detail.image} alt="" className="w-full max-w-full h-auto" />
         </div>
-        <div className="flex flex-col gap-5">
-          <h1 className="text-2xl md:text-4xl uppercase font-bold">{detail.name}</h1>
+        <div className="flex flex-col items-center justify-center gap-5">
+          <h1 className="text-2xl md:text-4xl uppercase font-bold">
+            {detail.name}
+          </h1>
           <p className="font-bold text-xl md:text-3xl">${detail.price}</p>
           <div className="flex flex-col md:flex-row gap-5">
             <div className="flex gap-2 items-center">
@@ -101,4 +104,3 @@ const Detail = () => {
 };
 
 export default Detail;
-

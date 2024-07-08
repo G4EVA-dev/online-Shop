@@ -1,17 +1,19 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 import PropTypes from "prop-types";
-// import borderLeft from "../assets/images/borderLeft.png";
+import borderLeft from "../assets/images/borderLeft.png";
 
 const Category = ({ title, products }) => {
   return (
     <div className="category ">
-      <div>
-        {/* <image src={borderLeft} alt={title} /> */}
-        <h1 className="text-4xl font-bold mb-5 border border-left border-customPink ">{title}</h1>
+      <div class>
+        <image src={borderLeft} alt={title} />
+        <h1 className="text-4xl font-bold mb-5 border border-customPink ">
+          {title}
+        </h1>
       </div>
 
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5">
+      <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap-[45px] ">
         {products.map((product) => (
           <ProductCard key={product.id} data={product} />
         ))}

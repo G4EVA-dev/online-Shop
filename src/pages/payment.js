@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactComponent as SvgImage } from "../assets/images/paymentCard.svg";
+import { Link } from "react-router-dom";
 
 const Payment = () => {
   return (
@@ -62,9 +63,11 @@ const Payment = () => {
             </div>
           </div>
 
-          <button className="text-black text-sm font-medium w-full lg:w-36 bg-customPink p-4 rounded-lg hover:bg-white">
-            Make Payment
-          </button>
+          <Link to="/">
+            <button className="text-black text-sm font-medium w-full lg:w-36 bg-customPink p-4 rounded-lg hover:bg-white">
+              Make Payment
+            </button>
+          </Link>
         </div>
       </div>
     </div>

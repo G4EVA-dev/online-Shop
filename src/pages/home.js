@@ -8,12 +8,12 @@ import stroke from "../assets/images/borderLeft.png";
 const CategorySection = ({ title, products }) => (
   <div className="category mb-10 mt-[74px] ">
     <div className="w-full flex gap-[20px] items-center">
-      <img src={stroke} />
+      <img src={stroke} alt="Bordereft" />
 
       <h1 className="text-3xl font-bold">{title}</h1>
     </div>
 
-    <div className=" grid lg:grid-cols-3 md:wd-[250px] md:grid-cols-2 sm:grid-cols-2 gap-5 w-full  ">
+    <div className=" grid lg:grid-cols-3  md:grid-cols-2 sm:grid-cols-2 gap-5 w-full   ">
       {products.map((product, key) => (
         <ProductCard key={key} data={product} />
       ))}

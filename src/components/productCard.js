@@ -19,13 +19,13 @@ const ProductCard = (props) => {
   };
 
   return (
-    <div className=" bg-opacity-70 px-[10px] mt-[21px] rounded-xl w-[385px] md-w-[200px] flex flex-col  m-auto ">
+    <div className=" bg-opacity-70 mt-[21px] rounded-xl w-[320px]  lg:w-[360px]  flex flex-col  m-auto ">
       <Link to={slug}>
         <div className="max-w-full flex items-center justify-center bg-gray-300 h-[395.13px] cursor-pointer border hover:border-customPink   mb-24px rounded-[10px] ">
           <img
             src={image}
             alt=""
-            className=" h-[50%] m-auto object-cover object-center rounded-lg "
+            className=" h-[50%]  m-auto object-cover object-center rounded-lg "
           />
         </div>
       </Link>

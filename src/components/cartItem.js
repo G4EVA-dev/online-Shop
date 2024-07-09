@@ -51,8 +51,8 @@ const CartItem = (props) => {
         </div>
 
         <div className="flex flex-col">
-          <h3 className="name flex-grow text-left">{detail.name}</h3>
-          <h3 className="info flex-grow text-left">{detail.info}</h3>
+          <h3 className="name  text-left">{detail.name}</h3>
+          <h3 className="info text-left">{detail.info}</h3>
         </div>
       </div>
 

@@ -30,9 +30,7 @@ const ImagesWithContent = () => {
             <p className="text-left mb-4 md:mb-8">
               Limited offer, hop on and get yours now
             </p>
-            <button className="mb-4 md:mb-8 bg-gray-200 bg-opacity-35 hover:bg-gray-300 hover:bg-opacity-50 transition-colors duration-300 ease-in-out text-white border border-white px-4 py-2 md:px-6 md:py-4 rounded-full flex items-center">
-              Buy now
-            </button>
+            
           </div>
         </div>
       </div>

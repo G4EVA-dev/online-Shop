@@ -9,7 +9,7 @@ const ImagesWithContent = () => {
       <div className="relative w-full ">
         {/* Desktop Image */}
         <div className="hidden md:block h-auto rounded-lg overflow-hidden border-10 border-gray-500 relative">
-          <SvgImage className="w-full h-full object-cover object-center" />
+          <SvgImage className="max-w-full h-full object-cover object-center" />
         </div>
 
         {/* Mobile Image */}

@@ -1,12 +1,12 @@
 import React from "react";
-import { ReactComponent as SvgImage } from "../assets/images/paymentCard.svg";
+import { ReactComponent as SvgImage } from "../assets/images/cardMobileView.svg";
 import { Link } from "react-router-dom";
 
 const Payment = () => {
   return (
     <div className="container max-w-4xl mt-12 mx-auto p-4">
-      <div className="right w-full bg-paymentBg p-10 rounded-lg">
-        <h1 className="text-white font-semibold mb-5 text-2xl">Payment</h1>
+      <div className="right w-full  p-2 rounded-lg">
+        <h1 className="text-black font-normak mb-5 text-[14px] ">Payment</h1>
 
         <div className="mb-5">
           <SvgImage
@@ -19,7 +19,7 @@ const Payment = () => {
           <div className="mb-8">
             <label
               htmlFor="cardNumber"
-              className="block text-white mb-2 text-sm font-medium"
+              className="block mb-2 text-black font-normak mb-5 text-[14px]"
             >
               Card Number
             </label>
@@ -27,15 +27,15 @@ const Payment = () => {
               id="cardNumber"
               type="number"
               placeholder="0000 0000 0000 0000"
-              className="border border-paymentBorder w-full p-4 rounded-lg bg-transparent"
+              className="border border-paymentMobileBorder w-full p-4 rounded-lg bg-transparent"
             />
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-5 mb-8">
-            <div>
+          <div className="flex flex-col xs:flex-row md:flex-col  lg:flex-col lg:w-full gap-5 mb-8">
+            <div className="  " >
               <label
                 htmlFor="expirationDate"
-                className="block text-white mb-2 text-sm font-medium"
+                className="block  mb-2 text-black font-normak mb-5 text-[14px]"
               >
                 Expiration Date
               </label>
@@ -43,14 +43,14 @@ const Payment = () => {
                 id="expirationDate"
                 type="number"
                 placeholder="MM/YY"
-                className="border border-paymentBorder w-full lg:w-64 p-4 rounded-lg bg-transparent"
+                className="border border-paymentMobileBorder w-full lg:w-64 p-4 rounded-lg bg-transparent"
               />
             </div>
 
             <div>
               <label
                 htmlFor="cvc"
-                className="block text-white mb-2 text-sm font-medium"
+                className="block mb-2 text-black font-normak mb-5 text-[14px]"
               >
                 CVC
               </label>
@@ -58,7 +58,7 @@ const Payment = () => {
                 id="cvc"
                 type="number"
                 placeholder="000"
-                className="border border-paymentBorder w-full lg:w-64 p-4 rounded-lg bg-transparent"
+                className="border border-paymentMobileBorder w-full lg:w-64 p-4 rounded-lg bg-transparent"
               />
             </div>
           </div>

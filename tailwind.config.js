@@ -14,6 +14,7 @@ module.exports = {
         paymentBg: 'rgba(42, 42, 42, 1)',
         paymentBorder: 'rgba(250, 250, 250, 0.5)',
         footerColor: 'rgba(250, 250, 250, 0.8)',
+        paymentMobileBorder: 'rgba(151, 151, 151, 1)',
       }
     },
   },

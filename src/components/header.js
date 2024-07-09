@@ -24,7 +24,7 @@ const Header = () => {
         </Link>
 
         <nav className="hidden md:flex items-center space-x-4 text-sm">
-          <Link to="/" className="font-bold text-customPink">
+          <Link to="/" className="font-bold " activeClassName="text-customPink" >
             Product Listing
           </Link>
           <Link to="/my-cart" className="font-bold hidden md:inline">
@@ -65,3 +65,10 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
+
+
+
+

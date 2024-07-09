@@ -40,7 +40,7 @@ const CartItem = (props) => {
   }
 
   return (
-    <div className="container flex flex-between gap-[130px] items-center bg-shopItem text-black  h-[155px] mb-[20px]  rounded-[7px] ">
+    <div className="container   flex flex-between gap-[130px] items-center bg-shopItem text-black  h-[155px] mb-[20px]  rounded-[7px] md:w-full ">
       <div className="flex flex-around gap-[15px] mr-auto ">
         <div className="image w-[100px] h-full ml-4 ">
           <img
@@ -77,11 +77,13 @@ const CartItem = (props) => {
       </div>
 
       <div>
-        <p  className="total w-20 text-center">{`N ${detail.price * quantity}`}</p>
+        <p className="total w-20 text-center">{`N ${
+          detail.price * quantity
+        }`}</p>
       </div>
 
       <div>
-        <p className=" hover:bg-red cursor-pointer " >
+        <p className=" hover:bg-red cursor-pointer ">
           <img className="mr-[40px] " src={trash} alt="Delete Item" />
         </p>
       </div>
@@ -90,4 +92,3 @@ const CartItem = (props) => {
 };
 
 export default CartItem;
-

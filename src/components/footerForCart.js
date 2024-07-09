@@ -1,10 +1,11 @@
 // src/components/FooterForCart.js
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FooterForCart = () => {
   return (
-    <footer className="bg-footerBackground text-white py-4 px-6 flex flex-between w-full rounded-[10px] ">
+    <footer className="bg-footerBackground text-white px-4  flex flex-between w-full rounded-[10px] ">
       <div className="w-full flex-between flex p-10 ">
         <div className="left mr-auto ">
           <h1 className="text-[24px] font-semibold mb-[27px] ">
@@ -52,8 +53,11 @@ const FooterForCart = () => {
             <span>N1234</span>
           </div>
 
-          <button className="w-full h-[45px] rounded-[10px] bg-customPink text-[12px] font-normal text-black mt-[21px] "  >Checkout</button>
-
+          <Link to="/checkout">
+            <button className="w-full h-[45px] rounded-[10px] bg-customPink text-[12px] font-normal text-black mt-[21px] ">
+              Checkout
+            </button>
+          </Link>
         </div>
       </div>
     </footer>

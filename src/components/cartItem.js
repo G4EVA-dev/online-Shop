@@ -51,8 +51,8 @@ const CartItem = (props) => {
         </div>
 
         <div className="flex flex-col">
-          <h3 className="name  text-left">{detail.name}</h3>
-          <h3 className="info text-left">{detail.info}</h3>
+          <h3 className="name  text-left text-[12px] md:text-[14px] font-semibold ">{detail.name}</h3>
+          <h3 className="info text-left text-[11px] md:text-[12px] font-normal">{detail.info}</h3>
         </div>
       </div>
 
@@ -60,6 +60,7 @@ const CartItem = (props) => {
         <p className="">{`N ${detail.price}`} </p>
       </div>
 
+      <div className="flex ">
       <div className=" buttons w-20  bottom-0 flex justify-between items-center">
         <button
           className="bg-white  w-6 h-6 text-black border border-black flex items-center justify-center"
@@ -80,6 +81,7 @@ const CartItem = (props) => {
         <p className="total w-20 text-center">{`N ${
           detail.price * quantity
         }`}</p>
+      </div>
       </div>
 
       <div>

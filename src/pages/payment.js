@@ -6,7 +6,7 @@ const Payment = () => {
   return (
     <div className="container max-w-4xl mt-12 mx-auto p-4">
       <div className="right w-full  p-2 rounded-lg">
-        <h1 className="text-black font-normak mb-5 text-[14px] ">Payment</h1>
+        <h1 className="mb-5 text-3xl font-bold">Payment</h1>
 
         <div className="mb-5">
           <SvgImage

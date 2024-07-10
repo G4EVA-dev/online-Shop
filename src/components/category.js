@@ -13,7 +13,7 @@ const Category = ({ title, products }) => {
         </h1>
       </div>
 
-      <div className=" grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap-[75px]">
+      <div className=" grid  lg:grid-cols-3 md:grid-cols-3 gap-[75px]">
         {products.map((product) => (
           <ProductCard key={product.id} data={product} />
         ))}

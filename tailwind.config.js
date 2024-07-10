@@ -5,6 +5,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      minWidth: {
+        'custom': '200px',
+        'custom': '450px',
+        // Add more custom widths as needed
+      },
       colors: {
         customPink:'rgba(255, 127, 125, 1)',
         colorAddToCard: 'rgba(255, 127, 125, 1)',

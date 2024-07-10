@@ -19,9 +19,9 @@ const ProductCard = (props) => {
   };
 
   return (
-    <div className=" bg-opacity-70 mt-[21px] rounded-xl w-[320px]  lg:w-[360px]  flex flex-col  m-auto ">
+    <div className=" bg-opacity-70 mt-[21px] rounded-xl w-[185px]  md:w-[320px]  lg:w-[360px] flex flex-col  m-auto ">
       <Link to={slug}>
-        <div className="max-w-full flex items-center justify-center bg-gray-300 h-[395.13px] cursor-pointer border hover:border-customPink   mb-24px rounded-[10px] ">
+        <div className="max-w-full flex items-center justify-center bg-gray-300 h-[174px] md:h-[395.13px] cursor-pointer border hover:border-customPink   mb-24px rounded-[10px] ">
           <img
             src={image}
             alt=""
@@ -31,20 +31,20 @@ const ProductCard = (props) => {
       </Link>
 
       <div className="">
-        <div className="flex justify-between mb-[10px] items-center ">
-          <h3 className="text-[18px]  font-semibold ">{name}</h3>
-          <p className="text-[14px] font-medium text-customPink text-[14px] ">
+        <div className="flex flex-start flex-col md:flex-row md:justify-between mb-[10px] md:items-center ">
+          <h3 className="text-[12px] md:text-[18px] mb-[5px]  font-semibold ">{name}</h3>
+          <p className="text-[13px] md:text-[14px] font-medium text-customPink text-[14px] ">
             N {price}
           </p>
         </div>
 
         <div>
-          <p className="text-[14px] font-normal mb-[10px] ">{info}</p>
+          <p className="text-[12px] md:text-[18px] font-normal mb-[10px] ">{info}</p>
         </div>
 
         <div>
           <img
-            className="w-[104px] h-[20px] mb-[23px] "
+            className="w-[88px] h-[16.72px] md:w-[104px] md:h-[20px] mb-[23px] "
             src={stars}
             alt="Review"
           />
@@ -65,51 +65,3 @@ const ProductCard = (props) => {
 
 export default ProductCard;
 
-// ProductCard.js
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import { useSelector, useDispatch } from "react-redux";
-// import { addToCart } from "../stores/cart";
-// import iconCart from "../assets/images/iconCart.png";
-
-// const ProductCard = (props) => {
-//   const carts = useSelector((store) => store.cart.items);
-//   console.log(carts);
-
-//   const { id, name, price, image, slug } = props.data;
-
-//   const dispatch = useDispatch();
-//   const handleAddToCart = () => {
-//     dispatch(addToCart({
-//       productId: id,
-//       quantity: 1
-//     }));
-//   }
-
-//   return (
-//     <div className="bg-gray-300 bg-opacity-70 p-5 rounded-xl shadow-sm m-4 w-full max-w-[385px] h-[563px] flex flex-col justify-between">
-//       <Link to={slug} className="flex-grow">
-//         <img
-//           src={image}
-//           alt=""
-//           className="w-full h-full object-cover rounded-lg"
-//         />
-//       </Link>
-//       <div className="text-center mt-4">
-//         <h3 className="text-2xl py-3 font-medium">{name}</h3>
-//         <div className="flex justify-between items-center mt-2">
-//           <p className="text-lg font-medium">${price}</p>
-//           <button
-//             className="bg-transparent border border-red-500 text-red-500 p-2 rounded-md text-sm hover:bg-red-500 hover:text-white flex items-center gap-2 transition-colors duration-300"
-//             onClick={handleAddToCart}
-//           >
-//             <img src={iconCart} alt="Icon Cart" className="w-5" />
-//             Add To Cart
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProductCard;

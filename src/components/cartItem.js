@@ -56,11 +56,11 @@ const CartItem = (props) => {
         </div>
       </div>
 
-      <div>
+      <div className="hidden sm:inline ">
         <p className="">{`N ${detail.price}`} </p>
       </div>
 
-      <div className="buttons w-20 flex justify-between items-center">
+      <div className=" buttons w-20  bottom-0 flex justify-between items-center">
         <button
           className="bg-white  w-6 h-6 text-black border border-black flex items-center justify-center"
           onClick={handleMinusQuantity}

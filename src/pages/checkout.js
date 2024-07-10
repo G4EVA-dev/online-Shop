@@ -9,7 +9,7 @@ const Checkout = () => {
     setSelectedRadio(event.target.value);
   };
   return (
-    <div className="container w-full mt-16 mx-auto p-4">
+    <div className="container w-full mt-20 mx-auto p-4">
       <div className="mb-12">
         <h1 className="text-3xl font-bold">Check Out</h1>
       </div>

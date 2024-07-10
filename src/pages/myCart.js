@@ -18,7 +18,7 @@ const MyCart = () => {
         <div className="flex justify-between mt-[45px]">
           <div className="text-1xl w-full flex items-center lg:text-3xl font-bold md:text-2xl " >
             <h1 className="font-bold mr-auto  ">My Shopping Cart</h1>
-            <h1>{`${carts.length} Items`} </h1>
+            <h1>{`${carts.length + 1} Items`} </h1>
           </div>
         </div>
 

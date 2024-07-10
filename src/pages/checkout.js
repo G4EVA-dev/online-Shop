@@ -132,7 +132,7 @@ const Checkout = () => {
             </div>
 
             <div className="flex flex-col lg:flex-row gap-5 mb-8">
-              <div>
+              <div className="mr-auto" >
                 <label
                   htmlFor="expirationDate"
                   className="block text-white mb-2 text-sm font-medium"

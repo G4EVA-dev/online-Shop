@@ -20,7 +20,7 @@ const FooterForCart = () => {
               type="text"
               className="w-full lg:w-[281px] border border-paymentBorder h-[44px] rounded-[12px] bg-transparent"
             />
-            <button className="w-full lg:w-[66px] h-[45px] rounded-[10px] bg-customPink lg:w-[281px] text-[12px] text-black font-normal">
+            <button className="w-full lg:w-[66px] h-[45px] rounded-[10px] bg-customPink lg:w-[281px] text-[12px] text-black font-normal hover:bg-white">
               Apply
             </button>
           </div>
@@ -46,7 +46,7 @@ const FooterForCart = () => {
             <span>N1,234</span>
           </div>
           <Link to="/checkout">
-            <button className="w-full h-[45px] rounded-[10px] bg-customPink text-[12px] font-normal text-black mt-[21px]">
+            <button className="w-full h-[45px] rounded-[10px] bg-customPink text-[12px] font-normal text-black mt-[21px] hover:bg-white ">
               Checkout
             </button>
           </Link>

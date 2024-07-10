@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const FooterForCart = () => {
   return (
-    <footer className="bg-footerBackground text-white w-full  rounded-[10px] mt-auto">
+    <footer className="bg-footerBackground text-white w-full py-4  rounded-[10px] ">
       <div className="flex flex-col md:flex-row lg:flex-row p-10">
         <div className="left mr-auto">
           <h1 className="text-[24px] font-semibold mb-[27px]">

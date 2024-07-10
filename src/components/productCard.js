@@ -54,7 +54,7 @@ const ProductCard = (props) => {
           />
         </div>
 
-        <div className="flex justify-between items-center mb-2">
+        <div className="flex justify-between items-center mb-2"  >
           <button
             className="border border-colorAddToCard bg-white  p-2 rounded-[14px] text-[12px] hover:bg-colorAddToCard w-[104px] h-[44px] "
             onClick={handleAddToCart}

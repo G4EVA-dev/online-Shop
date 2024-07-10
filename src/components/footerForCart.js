@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 const FooterForCart = () => {
   return (
     <footer className="bg-footerBackground text-white md:px-4 w-full lg:px-4  md:w-full m-auto  lg:w-full rounded-[10px] ">
-      <div className="w-full flex  flex-col md:flex-row lg:flex-row  p-10 ">
+      <div className="w-full flex flex-col md:flex-row lg:flex-row  p-10 ">
         <div className="left  mr-auto ">
           <h1 className="text-[24px] font-semibold mb-[27px] ">
             Shopping Summary
           </h1>
 
-          <label htmlFor="discount" className="text-[16px] font-normal   ">
+          <label htmlFor="discount" className="text-[16px] font-normal">
             Discount Code
           </label>
 

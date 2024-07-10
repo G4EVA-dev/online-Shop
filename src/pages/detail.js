@@ -58,8 +58,8 @@ const Detail = () => {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-3xl text-center md:mt-[65px] mt-[45px]">
+    <div className="p-4 mt-[55px] ">
+      <h2 className="text-3xl text-center  md:mt-[65px] ">
         PRODUCT DETAIL
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

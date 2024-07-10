@@ -63,7 +63,7 @@ const Payment = () => {
             </div>
           </div>
 
-          <Link to="/">
+          <Link to="/paymentSuccess">
             <button className="text-black text-sm font-medium w-full lg:w-36 bg-customPink p-4 rounded-lg hover:bg-white">
               Make Payment
             </button>

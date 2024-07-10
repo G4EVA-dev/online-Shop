@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as SvgImage } from "../assets/images/paymentCard.svg";
 
@@ -163,9 +163,11 @@ const Checkout = () => {
               </div>
             </div>
 
-            <button className="text-black text-sm font-medium w-full lg:w-36 bg-customPink p-4 rounded-lg hover:bg-white">
-              Make Payment
-            </button>
+            <Link to="/paymentSuccess">
+              <button className="text-black text-sm font-medium w-full lg:w-36 bg-customPink p-4 rounded-lg hover:bg-white">
+                Make Payment
+              </button>
+            </Link>
           </div>
         </div>
 

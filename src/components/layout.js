@@ -11,7 +11,7 @@ const Layout = () => {
 
   return (
     <div className="bg-FAFAFA">
-      <main className="w-[1440px] max-w-full m-auto p-5"> {/*Had w-[1440px]*/}
+      <main className="w-[1440px] max-w-full m-auto p-[3px] md:p-5"> {/*Had w-[1440px]*/}
         <Header />
         <Outlet />
       </main>

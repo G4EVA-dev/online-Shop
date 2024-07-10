@@ -32,14 +32,18 @@ const ProductCard = (props) => {
 
       <div className="">
         <div className="flex flex-start flex-col md:flex-row md:justify-between mb-[10px] md:items-center ">
-          <h3 className="text-[12px] md:text-[18px] mb-[5px]  font-semibold ">{name}</h3>
+          <h3 className="text-[12px] md:text-[18px] mb-[5px]  font-semibold ">
+            {name}
+          </h3>
           <p className="text-[13px] md:text-[14px] font-medium text-customPink text-[14px] ">
             N {price}
           </p>
         </div>
 
         <div>
-          <p className="text-[12px] md:text-[18px] font-normal mb-[10px] ">{info}</p>
+          <p className="text-[12px] md:text-[18px] font-normal mb-[10px] ">
+            {info}
+          </p>
         </div>
 
         <div>
@@ -64,4 +68,3 @@ const ProductCard = (props) => {
 };
 
 export default ProductCard;
-

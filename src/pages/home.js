@@ -4,6 +4,8 @@ import ImagesWithContent from "../components/ImagesWithContent";
 import ProductCard from "../components/productCard";
 import Footer from "../components/footer";
 import stroke from "../assets/images/borderLeft.png";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CategorySection = ({ title, products }) => (
   <div className="category mb-10 mt-[74px] ">
@@ -24,6 +26,7 @@ const CategorySection = ({ title, products }) => (
 const Home = () => {
   return (
     <div>
+      <ToastContainer />
       <ImagesWithContent />
       <CategorySection title="Tech Gadget" products={techGadget} />
       <CategorySection title="Men Fashion" products={menFashion} />

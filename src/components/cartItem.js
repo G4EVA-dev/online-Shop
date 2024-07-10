@@ -41,8 +41,8 @@ const CartItem = (props) => {
 
   return (
     <div className="container flex flex-between max-w-full lg:gap-[130px] items-center bg-shopItem text-black  h-[155px] mb-[20px]  rounded-[7px] md:w-full ">
-      <div className="flex flex-around items-center gap-[15px] mr-auto ">
-        <div className="image w-[100px] h-full ml-4 ">
+      <div className="flex flex-around items-center gap-[5px] md:gap-[15px] mr-auto ">
+        <div className="image w-[100px] h-full ml-1 md:ml-4 ">
           <img
             src={detail.image}
             alt="Iamge of Product"

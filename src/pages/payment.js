@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ReactComponent as SvgImage } from "../assets/images/cardMobileView.svg";
 import { Link } from "react-router-dom";
@@ -5,7 +6,7 @@ import { Link } from "react-router-dom";
 const Payment = () => {
   return (
     <div className="container max-w-4xl mt-12 mx-auto p-4">
-      <div className="right w-full  p-2 rounded-lg">
+      <div className="right w-full p-2 rounded-lg">
         <h1 className="mb-5 text-3xl font-bold">Payment</h1>
 
         <div className="mb-5">
@@ -15,60 +16,72 @@ const Payment = () => {
           />
         </div>
 
-        <div>
+        <form>
           <div className="mb-8">
             <label
               htmlFor="cardNumber"
-              className="block mb-2 text-black font-normak mb-5 text-[14px]"
+              className="block mb-2 text-black font-normal text-sm"
             >
               Card Number
             </label>
             <input
               id="cardNumber"
-              type="number"
+              type="tel"
               placeholder="0000 0000 0000 0000"
               className="border border-paymentMobileBorder w-full p-4 rounded-lg bg-transparent"
+              autoComplete="cc-number"
+              aria-label="Credit card number"
+              required
             />
           </div>
 
-          <div className="flex flex-col xs:flex-row md:flex-col  lg:flex-col lg:w-full gap-5 mb-8">
-            <div className="  " >
+          <div className="flex flex-col md:flex-row gap-5 mb-8">
+            <div>
               <label
                 htmlFor="expirationDate"
-                className="block  mb-2 text-black font-normak mb-5 text-[14px]"
+                className="block mb-2 text-black font-normal text-sm"
               >
                 Expiration Date
               </label>
               <input
                 id="expirationDate"
-                type="number"
+                type="text"
                 placeholder="MM/YY"
                 className="border border-paymentMobileBorder w-full lg:w-64 p-4 rounded-lg bg-transparent"
+                autoComplete="cc-exp"
+                aria-label="Expiration date"
+                required
               />
             </div>
 
             <div>
               <label
                 htmlFor="cvc"
-                className="block mb-2 text-black font-normak mb-5 text-[14px]"
+                className="block mb-2 text-black font-normal text-sm"
               >
                 CVC
               </label>
               <input
                 id="cvc"
-                type="number"
+                type="text"
                 placeholder="000"
                 className="border border-paymentMobileBorder w-full lg:w-64 p-4 rounded-lg bg-transparent"
+                autoComplete="cc-csc"
+                aria-label="Card security code"
+                required
               />
             </div>
           </div>
 
           <Link to="/paymentSuccess">
-            <button className="text-black text-sm font-medium w-full lg:w-36 bg-customPink p-4 rounded-lg hover:bg-white">
+            <button
+              type="submit"
+              className="text-black text-sm font-medium w-full lg:w-36 bg-customPink p-4 rounded-lg hover:bg-white"
+            >
               Make Payment
             </button>
           </Link>
-        </div>
+        </form>
       </div>
     </div>
   );

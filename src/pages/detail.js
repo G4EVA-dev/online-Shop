@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -59,15 +60,15 @@ const Detail = () => {
 
   return (
     <div className="p-4 mt-[55px] ">
-      <h2 className="text-3xl text-center  md:mt-[65px] ">
+      <h2 id="product-detail-title" className="text-3xl text-center md:mt-[65px] ">
         PRODUCT DETAIL
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
-          <img src={detail.image} alt="" className="w-full max-w-full h-auto" />
+          <img src={detail.image} alt={`${detail.name} product image`} className="w-full max-w-full h-auto" />
         </div>
         <div className="flex flex-col items-center justify-center gap-5">
-          <h1 className="text-2xl md:text-4xl uppercase font-bold">
+          <h1 id="product-name" className="text-2xl md:text-4xl uppercase font-bold">
             {detail.name}
           </h1>
           <p className="font-bold text-xl md:text-3xl">${detail.price}</p>
@@ -76,15 +77,17 @@ const Detail = () => {
               <button
                 className="bg-gray-100 h-full w-10 font-bold text-xl rounded-xl flex justify-center items-center"
                 onClick={handleMinusQuantity}
+                aria-label="Decrease quantity"
               >
                 -
               </button>
-              <span className="bg-gray-200 h-full w-10 font-bold text-xl rounded-xl flex justify-center items-center">
+              <span className="bg-gray-200 h-full w-10 font-bold text-xl rounded-xl flex justify-center items-center" aria-live="polite">
                 {quantity}
               </span>
               <button
                 className="bg-gray-100 h-full w-10 font-bold text-xl rounded-xl flex justify-center items-center"
                 onClick={handlePlusQuantity}
+                aria-label="Increase quantity"
               >
                 +
               </button>
@@ -92,11 +95,12 @@ const Detail = () => {
             <button
               className="bg-slate-900 text-white px-7 py-3 rounded-xl shadow-2xl mt-3 md:mt-0"
               onClick={handleAddToCart}
+              aria-label={`Add ${detail.name} to cart`}
             >
               Add To Cart
             </button>
           </div>
-          <p className="mt-5 md:mt-0">{detail.description}</p>
+          <p className="mt-5 md:mt-0" aria-describedby="product-detail-description">{detail.description}</p>
         </div>
       </div>
     </div>

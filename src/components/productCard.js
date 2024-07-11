@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import iconCart from "../assets/images/iconCart.png";
@@ -29,12 +30,18 @@ const ProductCard = (props) => {
   };
 
   return (
-    <div className="bg-opacity-70 mt-[21px] rounded-xl w-[185px] md:w-[320px] lg:w-[360px] flex  flex-col m-auto ">
-      <Link to={slug}>
-        <div className="max-w-full flex items-center justify-center bg-gray-300 h-[174px] md:h-[395.13px] cursor-pointer border hover:border-customPink mb-24px rounded-[10px]">
+    <div
+      className="bg-opacity-70 mt-[21px] rounded-xl w-[185px] md:w-[320px] lg:w-[360px] flex flex-col m-auto"
+      role="group"
+      aria-labelledby={`product-title-${id}`}
+    >
+      <Link to={slug} aria-labelledby={`product-title-${id}`}>
+        <div
+          className="max-w-full flex items-center justify-center bg-gray-300 h-[174px] md:h-[395.13px] cursor-pointer border hover:border-customPink mb-24px rounded-[10px]"
+        >
           <img
             src={image}
-            alt=""
+            alt={`${name} product image`}
             className="h-[50%] m-auto object-cover object-center rounded-lg"
           />
         </div>
@@ -42,7 +49,10 @@ const ProductCard = (props) => {
 
       <div>
         <div className="flex flex-start flex-col md:flex-row md:justify-between mb-[10px] md:items-center">
-          <h3 className="text-[12px] md:text-[18px] mb-[5px] font-semibold">
+          <h3
+            id={`product-title-${id}`}
+            className="text-[12px] md:text-[18px] mb-[5px] font-semibold"
+          >
             {name}
           </h3>
           <p className="text-[13px] md:text-[14px] font-medium text-customPink">
@@ -60,7 +70,7 @@ const ProductCard = (props) => {
           <img
             className="w-[88px] h-[16.72px] md:w-[104px] md:h-[20px] mb-[23px]"
             src={stars}
-            alt="Review"
+            alt={`Rated ${stars} stars`}
           />
         </div>
 
@@ -68,6 +78,7 @@ const ProductCard = (props) => {
           <button
             className="border border-colorAddToCard bg-white p-2 rounded-[14px] text-[12px] hover:bg-colorAddToCard w-[104px] h-[44px]"
             onClick={handleAddToCart}
+            aria-label={`Add ${name} to cart`}
           >
             Add To Cart
           </button>

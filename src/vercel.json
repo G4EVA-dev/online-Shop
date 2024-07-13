@@ -1,11 +1,12 @@
 {
   "version": 2,
   "builds": [
-    { "src": "server.js", "use": "@vercel/node" },
-    { "src": "build/**/*", "use": "@vercel/static" }
+    { "src": "src/**/*", "use": "@vercel/static-build" }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/server.js" },
-    { "src": "/(.*)", "dest": "/build/index.html" }
-  ]
+    { "src": "/api/(.*)", "dest": "https://api.timbu.cloud/api/$1" }
+  ],
+  "static": {
+    "public": "build"
+  }
 }

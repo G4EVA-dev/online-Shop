@@ -1,6 +1,10 @@
+const BASE_URL = process.env.NODE_ENV === 'production' 
+  ? 'https://api.timbu.cloud' 
+  : 'http://localhost:5000';
+
 export const fetchProducts = async (page = 1, size = 10) => {
   try {
-    const response = await fetch(`/api/products?page=${page}&size=${size}`, {
+    const response = await fetch(`${BASE_URL}/products?organization_id=3e60fab9119a4ceeb7363bfc44d629c0&reverse_sort=false&page=${page}&size=${size}&Appid=Y8ZE73OSI3STWFA&Apikey=0b05a82548ab4104bd5e007e7bfcacd620240712130521270028`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -25,6 +29,7 @@ export const fetchProducts = async (page = 1, size = 10) => {
     throw error;
   }
 };
+
 
 
 

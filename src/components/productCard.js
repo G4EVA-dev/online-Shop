@@ -86,13 +86,6 @@ const ProductCard = ({ product }) => {
 export default ProductCard;
 
 
-
-
-
-
-
-
-
 // import React from "react";
 // import { Link } from "react-router-dom";
 // import iconCart from "../assets/images/iconCart.png";

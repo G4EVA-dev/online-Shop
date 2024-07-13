@@ -104,7 +104,7 @@ export const menFashion = [
     price: 4000,
     image: imageProduct16,
     description: "Stay stylish and protected from the sun with our Quality Plain Face Cap. Made from durable materials, this cap features a comfortable fit and a sleek design that complements any casual outfit. Perfect for daily wear, outdoor activities, and adding a sporty touch to your look.",
-    info: "4,000",
+    info: "Plain Black Face Cap ",
     stars: fiveStars,
     slug: "quality-plain-face-cap",
   },

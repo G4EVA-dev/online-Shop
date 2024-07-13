@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -18,28 +17,34 @@ const Header = () => {
   }, [carts]);
 
   return (
-    <header className="m-auto flex justify-between items-center py-2 bg-white fixed top-0 left-0 right-0 z-10 ">
+    <header className="m-auto flex justify-between items-center py-2 bg-white fixed top-0 left-0 right-0 z-10  ">
       <div className="container mx-auto flex justify-between items-center  ">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Logo" className="h-10 md:h-12 lg:h-14" />
+          <img src={logo} alt="Logo" className="h-10 md:h-12 lg:h-14 " />
         </Link>
 
         <nav className="hidden md:flex items-center space-x-4 text-sm">
           <Link
             to="/"
-            className={`font-bold ${location.pathname === '/' ? 'text-customPink' : ''}`}
+            className={`font-bold ${
+              location.pathname === "/" ? "text-customPink" : ""
+            }`}
           >
             Product Listing
           </Link>
           <Link
             to="/my-cart"
-            className={`font-bold hidden md:inline ${location.pathname === '/my-cart' ? 'text-customPink' : ''}`}
+            className={`font-bold hidden md:inline ${
+              location.pathname === "/my-cart" ? "text-customPink" : ""
+            }`}
           >
             My Cart
           </Link>
           <Link
             to="/checkout"
-            className={`font-bold hidden md:inline ${location.pathname === '/checkout' ? 'text-customPink' : ''}`}
+            className={`font-bold hidden md:inline ${
+              location.pathname === "/checkout" ? "text-customPink" : ""
+            }`}
           >
             Checkout
           </Link>
@@ -55,7 +60,11 @@ const Header = () => {
 
           <Link to="/checkout">
             <div className="w-[35px] h-[35px] border border-black rounded-[50%] flex justify-center items-center flex-col">
-              <img src={arrow} alt="Cart" className="h-[12px] w-[12px] text-black" />
+              <img
+                src={arrow}
+                alt="Cart"
+                className="h-[12px] w-[12px] text-black"
+              />
               <img src={cartImage} alt="Cart" className="w-[18pxpx] h-[18px]" />
             </div>
           </Link>

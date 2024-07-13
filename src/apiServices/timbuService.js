@@ -1,7 +1,7 @@
 // timbuService.js
 export const fetchProducts = async (page = 1, size = 10) => {
   try {
-    const response = await fetch(`http://localhost:5000/api/products`, {
+    const response = await fetch(`https://online-shop-hng11-task2/api/products`, { // Use your deployed server URL
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -26,6 +26,7 @@ export const fetchProducts = async (page = 1, size = 10) => {
     throw error;
   }
 };
+
 
 
 

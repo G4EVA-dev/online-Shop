@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { changeQuantity, removeFromCart } from "../stores/cart";
-import { fetchProductById } from "../apiServices/timpuProductService"; // New function to fetch individual product details
+import { fetchProducts } from "../apiServices/timbuService"; // Utility function to fetch product details
 import trash from "../assets/images/delete.png";
 
 const CartItem = ({ product }) => {
   const { productId, quantity } = product;
-  const [theProduct, setTheProduct] = useState(null); // State to hold product details
+  const [theproduct, setTheProduct] = useState(null); // State to hold product details
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,11 +17,17 @@ const CartItem = ({ product }) => {
           throw new Error("Product ID is undefined");
         }
 
-        const productData = await fetchProductById(productId); // Using the new function
-        if (productData) {
-          setTheProduct(productData);
+        const productData = await fetchProducts(`/api/products/${productId}`);
+        if (productData && productData.items && productData.items.length > 0) {
+          // Find the product matching the productId
+          const selectedProduct = productData.items.find(item => item.unique_id === productId);
+          if (selectedProduct) {
+            setTheProduct(selectedProduct);
+          } else {
+            throw new Error("Product not found in fetched data");
+          }
         } else {
-          throw new Error("Product not found in fetched data");
+          throw new Error("Product data not found");
         }
       } catch (error) {
         console.error("Error fetching product details:", error);
@@ -32,14 +38,12 @@ const CartItem = ({ product }) => {
   }, [productId]);
 
   const handleMinusQuantity = () => {
-    if (quantity > 1) {
-      dispatch(
-        changeQuantity({
-          productId: productId,
-          quantity: quantity - 1,
-        })
-      );
-    }
+    dispatch(
+      changeQuantity({
+        productId: productId,
+        quantity: quantity - 1,
+      })
+    );
   };
 
   const handlePlusQuantity = () => {
@@ -55,7 +59,7 @@ const CartItem = ({ product }) => {
     dispatch(removeFromCart(productId));
   };
 
-  if (!theProduct) {
+  if (!theproduct) {
     return <div>Loading...</div>; // Handle loading state while fetching product details
   }
 
@@ -63,18 +67,18 @@ const CartItem = ({ product }) => {
     <div className="container flex items-center bg-shopItem text-black h-[155px] mb-[20px] rounded-[7px]">
       <div className="image w-[100px] h-full ml-1 md:ml-4">
         <img
-          src={`https://api.timbu.cloud/images/${theProduct.photos[0].url}`}
-          alt={theProduct.name}
+          src={`https://api.timbu.cloud/images/${theproduct.photos[0].url}`}
+          alt={theproduct.name}
           className="w-[150px] h-[100px] object-cover object-contain"
         />
       </div>
 
       <div className="flex flex-col ml-4">
         <h3 className="text-left text-[12px] md:text-[14px] font-semibold">
-          {theProduct.name}
+          {theproduct.name}
         </h3>
         <h3 className="text-left text-[11px] md:text-[12px] font-normal">
-          {theProduct.description}
+          {theproduct.description}
         </h3>
       </div>
 
@@ -92,7 +96,7 @@ const CartItem = ({ product }) => {
         >
           +
         </button>
-        <p className="total ml-4">{`N ${theProduct.current_price[0].NGN[0] * quantity}`}</p>
+        <p className="total ml-4">{`N ${theproduct.price * quantity}`}</p>
         <button className="ml-4" onClick={handleRemoveItem}>
           <img src={trash} alt="Delete Item" />
         </button>
@@ -108,15 +112,16 @@ export default CartItem;
 
 
 
+
 // import React, { useState, useEffect } from "react";
 // import { useDispatch } from "react-redux";
 // import { changeQuantity, removeFromCart } from "../stores/cart";
-// import { fetchProducts } from "../apiServices/timbuService"; // Utility function to fetch product details
+// import { fetchProductById } from "../apiServices/timpuProductService"; // New function to fetch individual product details
 // import trash from "../assets/images/delete.png";
 
 // const CartItem = ({ product }) => {
 //   const { productId, quantity } = product;
-//   const [theproduct, setTheProduct] = useState(null); // State to hold product details
+//   const [theProduct, setTheProduct] = useState(null); // State to hold product details
 //   const dispatch = useDispatch();
 
 //   useEffect(() => {
@@ -127,17 +132,11 @@ export default CartItem;
 //           throw new Error("Product ID is undefined");
 //         }
 
-//         const productData = await fetchProducts(`/api/products/${productId}`);
-//         if (productData && productData.items && productData.items.length > 0) {
-//           // Find the product matching the productId
-//           const selectedProduct = productData.items.find(item => item.unique_id === productId);
-//           if (selectedProduct) {
-//             setTheProduct(selectedProduct);
-//           } else {
-//             throw new Error("Product not found in fetched data");
-//           }
+//         const productData = await fetchProductById(productId); // Using the new function
+//         if (productData) {
+//           setTheProduct(productData);
 //         } else {
-//           throw new Error("Product data not found");
+//           throw new Error("Product not found in fetched data");
 //         }
 //       } catch (error) {
 //         console.error("Error fetching product details:", error);
@@ -148,12 +147,14 @@ export default CartItem;
 //   }, [productId]);
 
 //   const handleMinusQuantity = () => {
-//     dispatch(
-//       changeQuantity({
-//         productId: productId,
-//         quantity: quantity - 1,
-//       })
-//     );
+//     if (quantity > 1) {
+//       dispatch(
+//         changeQuantity({
+//           productId: productId,
+//           quantity: quantity - 1,
+//         })
+//       );
+//     }
 //   };
 
 //   const handlePlusQuantity = () => {
@@ -169,7 +170,7 @@ export default CartItem;
 //     dispatch(removeFromCart(productId));
 //   };
 
-//   if (!theproduct) {
+//   if (!theProduct) {
 //     return <div>Loading...</div>; // Handle loading state while fetching product details
 //   }
 
@@ -177,18 +178,18 @@ export default CartItem;
 //     <div className="container flex items-center bg-shopItem text-black h-[155px] mb-[20px] rounded-[7px]">
 //       <div className="image w-[100px] h-full ml-1 md:ml-4">
 //         <img
-//           src={`https://api.timbu.cloud/images/${theproduct.photos[0].url}`}
-//           alt={theproduct.name}
+//           src={`https://api.timbu.cloud/images/${theProduct.photos[0].url}`}
+//           alt={theProduct.name}
 //           className="w-[150px] h-[100px] object-cover object-contain"
 //         />
 //       </div>
 
 //       <div className="flex flex-col ml-4">
 //         <h3 className="text-left text-[12px] md:text-[14px] font-semibold">
-//           {theproduct.name}
+//           {theProduct.name}
 //         </h3>
 //         <h3 className="text-left text-[11px] md:text-[12px] font-normal">
-//           {theproduct.description}
+//           {theProduct.description}
 //         </h3>
 //       </div>
 
@@ -206,7 +207,7 @@ export default CartItem;
 //         >
 //           +
 //         </button>
-//         <p className="total ml-4">{`N ${theproduct.price * quantity}`}</p>
+//         <p className="total ml-4">{`N ${theProduct.current_price[0].NGN[0] * quantity}`}</p>
 //         <button className="ml-4" onClick={handleRemoveItem}>
 //           <img src={trash} alt="Delete Item" />
 //         </button>
@@ -216,6 +217,13 @@ export default CartItem;
 // };
 
 // export default CartItem;
+
+
+
+
+
+
+
 
 
 

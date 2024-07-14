@@ -5,7 +5,7 @@ import mobileImage from "../assets/images/headPhoneMobile.svg"; // Assuming this
 
 const ImagesWithContent = () => {
   return (
-    <div className="flex justify-center h-full mt-[100px]">
+    <div className="flex justify-center h-full mt-[40px]">
       <div className="relative w-full ">
         {/* Desktop Image */}
         <div className="hidden md:block h-auto rounded-lg overflow-hidden border-10 border-gray-500 relative">

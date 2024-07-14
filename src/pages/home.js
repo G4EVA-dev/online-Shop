@@ -61,7 +61,7 @@ const Home = () => {
           <p>Failed to fetch products. Please try again later.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-[75px]">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-[65px]">
           {products.map((product) => (
             <ProductCard key={product.unique_id} product={product} />
           ))}

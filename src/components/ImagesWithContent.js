@@ -24,7 +24,7 @@ const ImagesWithContent = () => {
         {/* Text and button centered on Image */}
         <div className="absolute inset-0 flex items-center justify-start md:justify-start">
           <div className=" text-white px-4 flex flex-start flex-col  text-left md:text-left">
-            <h1 className=" xs:w-[221px] text-2xl md:text-4xl font-bold mb-2 md:max-sm:text-left md:mb-4">
+            <h1 className=" xs:w-[221px] text-2xl md:text-[32px] font-bold mb-2 md:max-sm:text-left md:mb-4">
               Premium Sound, Premium Savings
             </h1>
             <p className="text-left mb-4 md:mb-8">

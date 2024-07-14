@@ -112,28 +112,26 @@ const Home = () => {
       )}
 
       <div className="flex justify-center gap-[20px] mb-[25px]">
-        {prevPage && (
-          <button
-            onClick={handlePrevPage}
-            className="mt-4 p-2 md:p-4 bg-blue-500 text-white"
-          >
-            Previous Page
-          </button>
-        )}
+        <button
+          onClick={handlePrevPage}
+          className="mt-4 p-4 bg-blue-500 text-white"
+          disabled={!prevPage}
+        >
+          Previous Page
+        </button>
 
         {/* Display current page and total pages */}
-        <span className="mt-4 p-2 md:p-4 text-gray-700">
+        <span className="mt-4 p-4 text-gray-700">
           Page {page} of {totalPages}
         </span>
 
-        {nextPage && (
-          <button
-            onClick={handleNextPage}
-            className="mt-4 p-2 md:p-4 bg-blue-500 text-white"
-          >
-            Next Page
-          </button>
-        )}
+        <button
+          onClick={handleNextPage}
+          className="mt-4 p-4 bg-blue-500 text-white"
+          disabled={!nextPage}
+        >
+          Next Page
+        </button>
       </div>
 
       <Footer />

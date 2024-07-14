@@ -41,7 +41,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div
-      className="bg-opacity-70 mt-[21px] rounded-xl w-[185px] md:w-[320px] lg:w-[360px] flex flex-col m-auto"
+      className="bg-opacity-70 mt-[21px] rounded-xl w-[180px] md:w-[320px] lg:w-[360px] flex flex-col m-auto"
       role="group"
     >
       <Link to={`/${product.url_slug}`}>

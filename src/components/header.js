@@ -17,7 +17,7 @@ const Header = () => {
   }, [carts]);
 
   return (
-    <header className="m-auto flex justify-between items-center py-2 bg-white fixed top-0 left-0 right-0 z-10  ">
+    <header className="m-auto flex justify-between items-center p-2 bg-white fixed top-0 left-0 right-0 z-10  ">
       <div className="container mx-auto flex justify-between items-center  ">
         <Link to="/" className="flex items-center">
           <img src={logo} alt="Logo" className="h-10 md:h-12 lg:h-14 " />

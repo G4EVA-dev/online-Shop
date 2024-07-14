@@ -20,7 +20,7 @@ const CartItem = ({ product }) => {
         const productData = await fetchProducts(`/api/products/${productId}`);
         if (productData && productData.items && productData.items.length > 0) {
           // Find the product matching the productId
-          const selectedProduct = productData.items.find(item => item.unique_id === productId);
+          const selectedProduct = productData.items.find(item => item.id === productId);
           if (selectedProduct) {
             setTheProduct(selectedProduct);
           } else {

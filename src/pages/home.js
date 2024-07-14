@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ImagesWithContent from "../components/ImagesWithContent";
 import Footer from "../components/footer";
 import { fetchProducts } from "../apiServices/timbuService"; // Adjust the import path as necessary
+import { Oval } from 'react-loader-spinner'; // Import the loading spinner component
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -14,18 +15,22 @@ const Home = () => {
   const [nextPage, setNextPage] = useState(null);
   const [prevPage, setPrevPage] = useState(null);
   const [error, setError] = useState(null); // State to store error object
+  const [loading, setLoading] = useState(false); // State to store loading status
 
   useEffect(() => {
+    setLoading(true); // Start loading
     fetchProducts(page, size)
       .then((data) => {
         setProducts(data.items);
         setTotal(data.total);
         setNextPage(data.next_page);
         setPrevPage(data.previous_page);
+        setLoading(false); // Stop loading
       })
       .catch((error) => {
         console.error("Error fetching products:", error);
         setError(error); // Set error state
+        setLoading(false); // Stop loading
         toast.error("Failed to fetch products. Please try again later.", {
           position: "top-right",
           autoClose: 3000,
@@ -56,7 +61,11 @@ const Home = () => {
     <div className="">
       <ToastContainer />
       <ImagesWithContent />
-      {error ? ( // Conditional rendering for error message
+      {loading ? ( // Conditional rendering for loading spinner
+        <div className="flex justify-center items-center h-64">
+          <Oval color="#00BFFF" height={80} width={80} />
+        </div>
+      ) : error ? ( // Conditional rendering for error message
         <div className="error-message">
           <p>Failed to fetch products. Please try again later.</p>
         </div>
@@ -71,7 +80,7 @@ const Home = () => {
       <div className="flex justify-center gap-[10px] md:gap-[20px] mb-[25px]">
         <button
           onClick={handlePrevPage}
-          className="mt-4 p-2 bg-blue-500 text-white rounded-5 "
+          className="mt-4 p-2 bg-blue-500 text-white rounded-5"
           disabled={!prevPage}
         >
           Previous Page
@@ -97,6 +106,116 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useEffect, useState } from "react";
+// import ProductCard from "../components/productCard"; // Assuming you have a ProductCard component
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+// import ImagesWithContent from "../components/ImagesWithContent";
+// import Footer from "../components/footer";
+// import { fetchProducts } from "../apiServices/timbuService"; // Adjust the import path as necessary
+
+// const Home = () => {
+//   const [products, setProducts] = useState([]);
+//   const [page, setPage] = useState(1);
+//   const [size, setSize] = useState(10);
+//   const [total, setTotal] = useState(0);
+//   const [nextPage, setNextPage] = useState(null);
+//   const [prevPage, setPrevPage] = useState(null);
+//   const [error, setError] = useState(null); // State to store error object
+
+//   useEffect(() => {
+//     fetchProducts(page, size)
+//       .then((data) => {
+//         setProducts(data.items);
+//         setTotal(data.total);
+//         setNextPage(data.next_page);
+//         setPrevPage(data.previous_page);
+//       })
+//       .catch((error) => {
+//         console.error("Error fetching products:", error);
+//         setError(error); // Set error state
+//         toast.error("Failed to fetch products. Please try again later.", {
+//           position: "top-right",
+//           autoClose: 3000,
+//           hideProgressBar: false,
+//           closeOnClick: true,
+//           pauseOnHover: true,
+//           draggable: true,
+//           progress: undefined,
+//         });
+//       });
+//   }, [page, size]);
+
+//   const handleNextPage = () => {
+//     if (nextPage) {
+//       setPage(page + 1);
+//     }
+//   };
+
+//   const handlePrevPage = () => {
+//     if (prevPage) {
+//       setPage(page - 1);
+//     }
+//   };
+
+//   const totalPages = Math.ceil(total / size); // Calculate total pages
+
+//   return (
+//     <div className="">
+//       <ToastContainer />
+//       <ImagesWithContent />
+//       {error ? ( // Conditional rendering for error message
+//         <div className="error-message">
+//           <p>Failed to fetch products. Please try again later.</p>
+//         </div>
+//       ) : (
+//         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-[65px]">
+//           {products.map((product) => (
+//             <ProductCard key={product.unique_id} product={product} />
+//           ))}
+//         </div>
+//       )}
+
+//       <div className="flex justify-center gap-[10px] md:gap-[20px] mb-[25px]">
+//         <button
+//           onClick={handlePrevPage}
+//           className="mt-4 p-2 bg-blue-500 text-white rounded-5 "
+//           disabled={!prevPage}
+//         >
+//           Previous Page
+//         </button>
+
+//         {/* Display current page and total pages */}
+//         <span className="mt-4 p-2 text-gray-700">
+//           Page {page} of {totalPages}
+//         </span>
+
+//         <button
+//           onClick={handleNextPage}
+//           className="mt-4 p-2 bg-blue-500 text-white rounded-5"
+//           disabled={!nextPage}
+//         >
+//           Next Page
+//         </button>
+//       </div>
+
+//       <Footer />
+//     </div>
+//   );
+// };
+
+// export default Home;
 
 
 

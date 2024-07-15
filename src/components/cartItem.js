@@ -63,6 +63,9 @@ const CartItem = ({ product }) => {
     return <div>Loading...</div>; // Handle loading state while fetching product details
   }
 
+  // Extract price in NGN from the product details
+  const productPrice = theproduct.current_price && theproduct.current_price[0] && theproduct.current_price[0].NGN && theproduct.current_price[0].NGN[0];
+
   return (
     <div className="container flex items-center bg-shopItem text-black h-[155px] mb-[20px] rounded-[7px]">
       <div className="image w-[100px] h-full ml-1 md:ml-4">
@@ -96,7 +99,7 @@ const CartItem = ({ product }) => {
         >
           +
         </button>
-        <p className="total ml-4">{`N ${theproduct.price * quantity}`}</p>
+        <p className="total ml-4">{`N ${productPrice * quantity}`}</p>
         <button className="ml-4" onClick={handleRemoveItem}>
           <img src={trash} alt="Delete Item" />
         </button>

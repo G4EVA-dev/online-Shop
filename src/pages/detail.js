@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../stores/cart";
-import { fetchProductDetails } from "../apiServices/timpuProductService"; // Ensure this service fetches data correctly
+import { fetchProducts } from "../apiServices/timbuService"; // Ensure this service fetches data correctly
 
 const Detail = () => {
-  const { slug: productId } = useParams();
+  const { slug: url_slug } = useParams();
   const [detail, setDetail] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
@@ -13,13 +13,19 @@ const Detail = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        if (!productId) {
-          throw new Error("Product ID is undefined");
+        if (!url_slug) {
+          throw new Error("URL slug is undefined");
         }
 
-        const productData = await fetchProductDetails(productId);
-        if (productData) {
-          setDetail(productData);
+        const productData = await fetchProducts(`/api/products/${url_slug}`);
+        if (productData && productData.items && productData.items.length > 0) {
+          // Find the product matching the url_slug
+          const selectedProduct = productData.items.find(item => item.url_slug === url_slug);
+          if (selectedProduct) {
+            setDetail(selectedProduct);
+          } else {
+            throw new Error("Product not found in fetched data");
+          }
         } else {
           throw new Error("Product data not found");
         }
@@ -29,7 +35,7 @@ const Detail = () => {
     };
 
     fetchProductDetails();
-  }, [productId]);
+  }, [url_slug]);
 
   if (!detail) {
     return <div>Loading...</div>; // Handle loading state while fetching product details
@@ -46,7 +52,7 @@ const Detail = () => {
   const handleAddToCart = () => {
     dispatch(
       addToCart({
-        productId: detail.unique_id,
+        productId: detail.id,
         quantity: quantity,
       })
     );
@@ -65,8 +71,8 @@ const Detail = () => {
   };
 
   return (
-    <div className="p-4 mt-[55px]">
-      <h2 id="product-detail-title" className="text-3xl text-center md:mt-[65px]">
+    <div className="p-4 mt-[55px] ">
+      <h2 id="product-detail-title" className="text-3xl text-center md:mt-[65px] ">
         PRODUCT DETAIL
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -120,7 +126,6 @@ const Detail = () => {
 };
 
 export default Detail;
-
 
 
 

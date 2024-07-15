@@ -1,12 +1,12 @@
+
+
+
 {
-  "version": 2,
-  "builds": [
-    { "src": "src/**/*", "use": "@vercel/static-build" }
-  ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "https://api.timbu.cloud/api/$1" }
-  ],
-  "static": {
-    "public": "build"
-  }
+  "rewrites": [
+    {
+        "source": "/api/:path(.*)",
+        "destination": "https://api.timbu.cloud/:path"
+    },
+     { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }

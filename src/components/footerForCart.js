@@ -5,9 +5,16 @@ import { Link } from "react-router-dom";
 const FooterForCart = () => {
   const cartItems = useSelector((state) => state.cart.items); // Assuming state.cart.items is the array of cart items
 
+  // Calculate subtotal
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const discount = subtotal * 0.2; // 20% discount
-  const deliveryFee = subtotal * 0.03; // 3% delivery fee
+
+  // Calculate discount amount (20% of subtotal)
+  const discount = subtotal * 0.2;
+
+  // Calculate delivery fee (3% of subtotal)
+  const deliveryFee = subtotal * 0.03;
+
+  // Calculate total amount
   const total = subtotal - discount + deliveryFee;
 
   return (
@@ -59,6 +66,7 @@ const FooterForCart = () => {
 };
 
 export default FooterForCart;
+
 
 
 

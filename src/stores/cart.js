@@ -13,11 +13,13 @@ const cartSlice = createSlice({
   reducers: {
     addToCart(state, action) {
       const { productId, price, quantity } = action.payload;
-      const indexProductId = state.items.findIndex(
-        (item) => item.productId === productId
-      );
-      if (indexProductId >= 0) {
-        state.items[indexProductId].quantity += quantity;
+      const index = state.items.findIndex(item => item.productId === productId);
+      
+      if (index !== -1) {
+        state.items[index] = {
+          ...state.items[index],
+          quantity: state.items[index].quantity + quantity
+        };
       } else {
         state.items.push({ productId, price, quantity });
       }
@@ -26,21 +28,24 @@ const cartSlice = createSlice({
     },
     changeQuantity(state, action) {
       const { productId, quantity } = action.payload;
-      const indexProductId = state.items.findIndex(
-        (item) => item.productId === productId
-      );
-      if (quantity > 0) {
-        state.items[indexProductId].quantity = quantity;
-      } else {
-        state.items = state.items.filter(
-          (item) => item.productId !== productId
-        );
+      const index = state.items.findIndex(item => item.productId === productId);
+      
+      if (index !== -1) {
+        if (quantity > 0) {
+          state.items[index] = {
+            ...state.items[index],
+            quantity: quantity
+          };
+        } else {
+          state.items = state.items.filter(item => item.productId !== productId);
+        }
       }
+
       localStorage.setItem("carts", JSON.stringify(state.items));
     },
     removeFromCart(state, action) {
       const productId = action.payload;
-      state.items = state.items.filter((item) => item.productId !== productId);
+      state.items = state.items.filter(item => item.productId !== productId);
       localStorage.setItem("carts", JSON.stringify(state.items));
     },
     toggleStatusTab(state) {
@@ -51,6 +56,7 @@ const cartSlice = createSlice({
 
 export const { addToCart, changeQuantity, removeFromCart, toggleStatusTab } = cartSlice.actions;
 export default cartSlice.reducer;
+
 
 
 

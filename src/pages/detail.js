@@ -89,7 +89,7 @@ const Detail = () => {
             />
           )}
         </div>
-        <div className="flex flex-col items-center justify-center gap-5">
+        <div className="flex flex-col items-center justify-center gap-3">
           <h1
             id="product-name"
             className="text-2xl md:text-4xl uppercase font-bold"
@@ -131,7 +131,7 @@ const Detail = () => {
             </button>
           </div>
           <p
-            className="mt-5 md:mt-0 text-3"
+            className="mt-5 md:mt-0 text-[2rem]"
             aria-describedby="product-detail-description"
           >
             {detail.description}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../stores/cart";
-import { fetchProducts } from "../apiServices/timbuService"; // Ensure this service fetches data correctly
+import { fetchProducts } from "../apiServices/timbuService";
 
 const Detail = () => {
   const { slug: url_slug } = useParams();
@@ -17,9 +17,8 @@ const Detail = () => {
           throw new Error("URL slug is undefined");
         }
 
-        const productData = await fetchProducts(`/api/products/${url_slug}`);
+        const productData = await fetchProducts(1, 10); // Fetching product list
         if (productData && productData.items && productData.items.length > 0) {
-          // Find the product matching the url_slug
           const selectedProduct = productData.items.find(item => item.url_slug === url_slug);
           if (selectedProduct) {
             setDetail(selectedProduct);
@@ -126,6 +125,7 @@ const Detail = () => {
 };
 
 export default Detail;
+
 
 
 

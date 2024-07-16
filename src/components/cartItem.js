@@ -16,7 +16,7 @@ const CartItem = ({ product }) => {
           throw new Error("Product ID is undefined");
         }
 
-        const productData = await fetchProducts(1, 10); // Fetching product list
+        const productData = await fetchProducts(1, 30); // Fetching product list
         if (productData && productData.items && productData.items.length > 0) {
           const selectedProduct = productData.items.find(item => item.unique_id === productId);
           if (selectedProduct) {

@@ -17,9 +17,11 @@ const Detail = () => {
           throw new Error("URL slug is undefined");
         }
 
-        const productData = await fetchProducts(1, 10); // Fetching product list
+        const productData = await fetchProducts(1, 30); // Fetching product list
         if (productData && productData.items && productData.items.length > 0) {
-          const selectedProduct = productData.items.find(item => item.url_slug === url_slug);
+          const selectedProduct = productData.items.find(
+            (item) => item.url_slug === url_slug
+          );
           if (selectedProduct) {
             setDetail(selectedProduct);
           } else {
@@ -71,7 +73,10 @@ const Detail = () => {
 
   return (
     <div className="p-4 mt-[55px] ">
-      <h2 id="product-detail-title" className="text-3xl text-center md:mt-[65px] ">
+      <h2
+        id="product-detail-title"
+        className="text-3xl text-center md:mt-[65px] "
+      >
         PRODUCT DETAIL
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -85,10 +90,15 @@ const Detail = () => {
           )}
         </div>
         <div className="flex flex-col items-center justify-center gap-5">
-          <h1 id="product-name" className="text-2xl md:text-4xl uppercase font-bold">
+          <h1
+            id="product-name"
+            className="text-2xl md:text-4xl uppercase font-bold"
+          >
             {detail.name}
           </h1>
-          <p className="font-bold text-xl md:text-3xl">{getPrice()}</p>
+          <p className="font-bold text-xl md:text-3xl">
+            {quantity * getPrice()}
+          </p>
           <div className="flex flex-col md:flex-row gap-5">
             <div className="flex gap-2 items-center">
               <button
@@ -98,7 +108,10 @@ const Detail = () => {
               >
                 -
               </button>
-              <span className="bg-gray-200 h-full w-10 font-bold text-xl rounded-xl flex justify-center items-center" aria-live="polite">
+              <span
+                className="bg-gray-200 h-full w-10 font-bold text-xl rounded-xl flex justify-center items-center"
+                aria-live="polite"
+              >
                 {quantity}
               </span>
               <button
@@ -117,7 +130,12 @@ const Detail = () => {
               Add To Cart
             </button>
           </div>
-          <p className="mt-5 md:mt-0" aria-describedby="product-detail-description">{detail.description}</p>
+          <p
+            className="mt-5 md:mt-0 text-3"
+            aria-describedby="product-detail-description"
+          >
+            {detail.description}
+          </p>
         </div>
       </div>
     </div>
@@ -125,11 +143,6 @@ const Detail = () => {
 };
 
 export default Detail;
-
-
-
-
-
 
 // import React, { useEffect, useState } from "react";
 // import { useDispatch } from "react-redux";
@@ -272,12 +285,6 @@ export default Detail;
 // };
 
 // export default Detail;
-
-
-
-
-
-
 
 // import React, { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";

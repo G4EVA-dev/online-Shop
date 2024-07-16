@@ -12,14 +12,14 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
-      const { productId, quantity } = action.payload;
+      const { productId, price, quantity } = action.payload;
       const indexProductId = state.items.findIndex(
         (item) => item.productId === productId
       );
       if (indexProductId >= 0) {
         state.items[indexProductId].quantity += quantity;
       } else {
-        state.items.push({ productId, quantity });
+        state.items.push({ productId, price, quantity });
       }
 
       localStorage.setItem("carts", JSON.stringify(state.items));
@@ -51,6 +51,7 @@ const cartSlice = createSlice({
 
 export const { addToCart, changeQuantity, removeFromCart, toggleStatusTab } = cartSlice.actions;
 export default cartSlice.reducer;
+
 
 
 

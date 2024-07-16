@@ -66,7 +66,7 @@ const Detail = () => {
       detail.current_price[0].NGN &&
       detail.current_price[0].NGN.length > 0
     ) {
-      return `N ${detail.current_price[0].NGN[0]}`;
+      return `N ${quantity * detail.current_price[0].NGN[0]}`;
     }
     return "Price not available";
   };
@@ -97,7 +97,7 @@ const Detail = () => {
             {detail.name}
           </h1>
           <p className="font-bold text-xl md:text-3xl">
-            {quantity * getPrice()}
+            {getPrice()}
           </p>
           <div className="flex flex-col md:flex-row gap-5">
             <div className="flex gap-2 items-center">

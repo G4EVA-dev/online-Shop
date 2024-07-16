@@ -3,30 +3,19 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const FooterForCart = () => {
-  const cart = useSelector((state) => state.cart);
+  const cartItems = useSelector((state) => state.cart.items); // Assuming state.cart.items is the array of cart items
 
-  const calculateSubtotal = () => {
-    return cart.reduce((total, item) => {
-      const price = item.current_price[0].NGN[0];
-      return total + price * item.quantity;
-    }, 0);
-  };
-
-  const subtotal = calculateSubtotal();
-  const discountAmount = subtotal * 0.20; // 20% discount
+  const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const discount = subtotal * 0.2; // 20% discount
   const deliveryFee = subtotal * 0.03; // 3% delivery fee
-  const totalAmount = subtotal - discountAmount + deliveryFee;
+  const total = subtotal - discount + deliveryFee;
 
   return (
-    <footer className="bg-footerBackground text-white w-full py-4 rounded-[10px] ">
+    <footer className="bg-footerBackground text-white w-full py-4 rounded-[10px]">
       <div className="flex flex-col md:flex-row lg:flex-row p-10">
         <div className="left mr-auto">
-          <h1 className="text-[24px] font-semibold mb-[27px]">
-            Shopping Summary
-          </h1>
-          <label htmlFor="discount" className="text-[16px] font-normal">
-            Discount Code
-          </label>
+          <h1 className="text-[24px] font-semibold mb-[27px]">Shopping Summary</h1>
+          <label htmlFor="discount" className="text-[16px] font-normal">Discount Code</label>
           <div className="flex gap-[48px] items-center mt-[21px] md:flex-col mb-[21px]">
             <input
               id="discount"
@@ -42,24 +31,24 @@ const FooterForCart = () => {
           <div className="border-b-1 border-dashed border-gray-500 w-full mb-[20px]">
             <div className="sub-total flex mb-[20px]">
               <h1 className="mr-auto">Sub Total</h1>
-              <span>N{subtotal.toFixed(2)}</span>
+              <span>{`N${subtotal.toFixed(2)}`}</span>
             </div>
             <div className="delivery-fee flex mb-[20px]">
               <h1 className="mr-auto">Delivery Fee</h1>
-              <span>N{deliveryFee.toFixed(2)}</span>
+              <span>{`N${deliveryFee.toFixed(2)}`}</span>
             </div>
             <div className="discount-amount flex mb-[20px]">
               <h1 className="mr-auto">Discount Amount</h1>
-              <span>N{discountAmount.toFixed(2)}</span>
+              <span>{`N${discount.toFixed(2)}`}</span>
             </div>
             <div className="border-t-2 border-dashed border-gray-500 w-full"></div>
           </div>
           <div className="total-amount flex md:w-[307px] lg:w-[307px]">
             <h1 className="mr-auto">Total Amount</h1>
-            <span>N{totalAmount.toFixed(2)}</span>
+            <span>{`N${total.toFixed(2)}`}</span>
           </div>
           <Link to="/checkout">
-            <button className="w-full h-[45px] rounded-[10px] bg-customPink text-[12px] font-normal text-black mt-[21px] hover:bg-white ">
+            <button className="w-full h-[45px] rounded-[10px] bg-customPink text-[12px] font-normal text-black mt-[21px] hover:bg-white">
               Checkout
             </button>
           </Link>
@@ -70,6 +59,7 @@ const FooterForCart = () => {
 };
 
 export default FooterForCart;
+
 
 
 
